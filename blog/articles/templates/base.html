@@ -8,6 +8,7 @@
     </head>
     <body>
         <header class="wrapper">
+            <a href="{% url 'articles:home' %}">Home</a>
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
