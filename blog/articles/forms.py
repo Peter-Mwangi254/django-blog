@@ -7,6 +7,8 @@ class CreateArticle(forms.ModelForm):
         fields = ['title', 'body', 'thumb',]
 
 class CommentForm(forms.ModelForm):
+    post = forms.ModelChoiceField(queryset=Article.objects.all(), widget=forms.HiddenInput())
+
     class Meta:
         model = Comment
-        fields = ['text']
+        fields = ['post', 'text']
